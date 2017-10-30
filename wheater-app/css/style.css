@@ -1,0 +1,11 @@
+h1{
+text-align: center;
+}
+ul,li{
+  list-style: none;
+  text-align: left;
+}
+.more-info{
+  background-color: #eee;
+  display: none;
+}
