@@ -12,7 +12,19 @@ $(document).ready(function() {
                         '<img class="icon" src="'+json.weather[0].icon+'" alt="" />'+
                         '<span class="desc">'+json.weather[0].description+'</span>, '+
                         '<span class="temp">'+temperature+'</span>°C'+
-                        '<p>';
+                        '</p>';
+
+        /*switch(json.weather[0].main) {
+          case "Clouds":
+              $('body').css('background-color','#f5f5f5');
+              break;
+          case "Clear":
+              $('body').css('background-color','#ffffe0');
+              break;
+          default:
+              $('body').css('background-color','#fff');
+        }*/
+
         //altri valori
         $('.temp').text(json.main.temp);
         $('.humidity').text(json.main.humidity);
