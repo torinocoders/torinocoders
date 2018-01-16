@@ -2,61 +2,8 @@
 <html>
   <head>
   <meta charset="UTF-8">
+  <script src="js/script.js" charset="utf-8"></script>
   <script>
-  let myLibrary = [];
-  //costruttore con parametri
-  function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function(){
-      return this.title+', '+this.author+', '+this.pages+', '+this.read;
-    }
-  };
-  //costruttore senza parametri
-  function emptyBook() {
-    this.title = '';
-    this.author = '';
-    this.pages = '';
-    this.read = true;
-    this.info = function(){
-      return this.title+', '+this.author+', '+this.pages+', '+this.read;
-    }
-  };
-
-  function createNewBook() {
-    var form = document.getElementById("addBook");
-    var i;
-    var fields = form.getElementsByTagName("input");
-    var data = [];
-    var b = new emptyBook();
-    for(i = 0; i < fields.length; i++){
-      if(fields[i].type == 'text' || (fields[i].type == 'radio' && fields[i].checked)){
-        //data.push(fields[i].value);
-        b[fields[i].name] = fields[i].value;
-      }
-    }
-    console.log(b)
-    addBookToLibrary(b);
-    return b;
-  };
-  function addBookToLibrary(book) {
-    myLibrary.push(book);
-  };
-  function render(){
-    for(var i = 0; i < myLibrary.length; i++){
-      var newRow = '<tr><td>'+myLibrary[i].title+'</td><td>'+myLibrary[i].author+'</td><td>'+myLibrary[i].pages+'</td><td>'+myLibrary[i].read+'</td></tr>';
-    }
-    var el = document.createElement('td');
-  }
-
-  window.onload = function(){
-    //var libro1 = new Book('libro1', 'stoca',122, 'yes');
-    //console.log(libro1.info());
-    //var libro2 = new Book('Il Corsaro Nero', 'Emilio Salgari',387, 'no');
-    //addBookToLibrary(libro2);
-  };
 
   </script>
   </head>
@@ -71,12 +18,14 @@
   </form>
   <button onclick="createNewBook();">New book</button><br><br>
   <table border="1" class="library">
-    <tr>
+    <thead>
       <th>title</th>
       <th>autore</th>
       <th>numero pagine</th>
       <th>letto</th>
-    </tr>
+    </thead>
+    <tbody>
+    </tbody>
   </table>
 
 
